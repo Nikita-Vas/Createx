@@ -1,0 +1,50 @@
+<div class="leave section-offset">
+  <div class="leave__container">
+    <form class="leave__form">
+      <h2 class="leave__title title">Leave your comment</h2>
+      <div class="know-form__content know-form__content_vertical">
+        <div class="know-form__block">
+          <label class="know-form__field form-field form-field_vertical">
+            <span class="form-field__caption">Name*</span>
+            <input
+              autocomplete="off"
+              type="text"
+              name="name"
+              data-error="Ошибка"
+              placeholder="Your name"
+              class="form-field__input"
+            />
+          </label>
+
+          <label class="know-form__field form-field">
+            <span class="form-field__caption">Email</span>
+            <input
+              autocomplete="off"
+              type="email"
+              name="email"
+              data-required="email"
+              data-error="Неверный email адрес"
+              data-dev
+              data-validate
+              placeholder="Your working email"
+              class="form-field__input form-field__input--email"
+            />
+          </label>
+        </div>
+
+        <label class="know-form__field form-field form-field__big">
+          <span class="form-field__caption">Your comment*</span>
+          <textarea
+            autocomplete="off"
+            name="message"
+            data-error="Ошибка"
+            placeholder="Type comment here"
+            class="form-field__input form-field__input--comm"
+          ></textarea>
+        </label>
+
+        <button type="submit" class="button know-form__btn button--fill-primary">Post comment</button>
+      </div>
+    </form>
+  </div>
+</div>

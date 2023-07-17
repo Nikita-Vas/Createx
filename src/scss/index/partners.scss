@@ -1,0 +1,60 @@
+.partners {
+  background-color: $mainAthens;
+  padding: rem(80) 0 0 0;
+  @include adaptiveValue('padding-bottom', 110, 40);
+
+  &-no-color {
+    background-color: unset;
+    @include adaptiveValue('padding-top', 150, 40);
+    @include adaptiveValue('padding-bottom', 120, 40);
+  }
+
+  &__container {
+    &--about {
+      .partners__title {
+        @include adaptiveValue('margin-bottom', 24, 20);
+      }
+    }
+  }
+
+  &__title {
+    @include adaptiveValue('margin-bottom', 60, 20);
+  }
+
+  &__text {
+    font-size: rem(18);
+    line-height: math.div(27, 18);
+    color: $mainLightGray;
+    text-align: center;
+
+    @include adaptiveValue('margin-bottom', 60, 20);
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: rem(30);
+
+    @media (max-width: $tablet) {
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    flex: 1 0 rem(155);
+
+    @media (max-width: rem(370)) {
+      flex: 0 0 rem(155);
+    }
+  }
+
+  &__link {
+  }
+
+  &__logo {
+  }
+}
+
+.title {
+}

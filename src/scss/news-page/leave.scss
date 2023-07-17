@@ -1,0 +1,29 @@
+.leave {
+  max-width: rem(800);
+  margin: 0 auto;
+
+  &__form {
+    @include adaptiveValue('padding-bottom', 180, 40);
+
+    .know-form__btn {
+      @include adaptiveValue('margin-top', 24, 0);
+    }
+  }
+
+  .form-field__input {
+    height: rem(52);
+
+    &::placeholder {
+      color: $mainLightGray;
+    }
+  }
+
+  .form-field__input--comm {
+    flex: unset;
+    width: 100%;
+    height: rem(100);
+    position: relative;
+    resize: none;
+    padding-top: rem(11);
+  }
+}

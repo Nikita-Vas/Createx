@@ -1,0 +1,85 @@
+.project-goal {
+  margin-top: rem(20);
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include adaptiveValue('gap', 135, 30, 1260, 700, 1);
+
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(290px, 600px) minmax(290px, 495px));
+  }
+
+  &__content {
+    flex: 3 1 rem(290);
+    min-width: rem(290);
+  }
+
+  &__title {
+    @include adaptiveValue('margin-bottom', 40, 20);
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+
+    font-weight: 400;
+    font-size: rem(18);
+    line-height: math.div(27, 18);
+    color: $mainGray;
+
+    @include adaptiveValue('gap', 40, 20);
+  }
+
+  &__table {
+    flex: 2 1 rem(290);
+  }
+}
+
+.project-info {
+  background-color: #ffffff;
+
+  box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+  border-radius: rem(4);
+
+  @include adaptiveValue('padding-top', 40, 20);
+  @include adaptiveValue('padding-bottom', 40, 20);
+  @include adaptiveValue('padding-left', 60, 30);
+  @include adaptiveValue('padding-right', 60, 30);
+
+  &__list {
+  }
+
+  &__item {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    display: grid;
+    grid-template-columns: minmax(min-content, 100px) minmax(100px, 1fr);
+    gap: rem(32);
+
+    justify-content: center;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: rem(15);
+    }
+  }
+
+  &__category {
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: math.div(26, 16);
+    color: $mainDarkGray;
+    text-transform: uppercase;
+
+    flex: 1 0 rem(98);
+  }
+
+  &__value {
+    flex: 40 1 auto;
+  }
+}

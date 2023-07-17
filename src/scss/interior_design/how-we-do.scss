@@ -1,0 +1,83 @@
+.we-do {
+  &__container {
+  }
+
+  &__title {
+    @include adaptiveValue('margin-bottom', 60, 20);
+  }
+
+  &__list {
+  }
+}
+
+.do-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+  gap: rem(30);
+
+  counter-reset: section;
+
+  &__item {
+    position: relative;
+    cursor: default;
+
+    &::before {
+      content: counter(section, decimal-leading-zero);
+      counter-increment: section;
+
+      font-weight: 700;
+      font-size: rem(46);
+      line-height: math.div(60, 45);
+      color: #d7dadd;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: rem(60);
+      height: rem(60);
+      background-color: $mainWhite;
+      position: relative;
+      z-index: 2;
+      border-radius: 50%;
+      border: rem(16) solid transparent;
+
+      transition: color 0.3s ease 0s;
+    }
+
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: rem(30);
+
+      width: 75%;
+      height: rem(1);
+      border-top: rem(1) dashed #d7dadd;
+      display: block;
+      z-index: 1;
+    }
+
+    @media (any-hover: hover) {
+      &:hover:before {
+        color: $mainRed;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: rem(20);
+    line-height: math.div(30, 20);
+
+    color: $mainDarkGray;
+
+    margin-bottom: rem(8);
+  }
+
+  &__text {
+    font-size: rem(16);
+    line-height: math.div(26, 16);
+
+    color: $mainLightGray;
+  }
+}

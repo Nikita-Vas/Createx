@@ -1,0 +1,18 @@
+.location {
+  background-color: $mainAthens;
+  &__container {
+    @include adaptiveValue('padding-top', 80, 20);
+    @include adaptiveValue('padding-bottom', 120, 30);
+  }
+
+  &__title {
+    @include adaptiveValue('margin-bottom', 60, 20);
+  }
+
+  &__map {
+  }
+
+  &__image-ibg {
+    padding-bottom: 47%;
+  }
+}

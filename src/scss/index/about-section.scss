@@ -1,0 +1,154 @@
+.about-section {
+  @include adaptiveValue('padding-bottom', 60, 0, 1230, 760, 1);
+  background-color: $mainWhite;
+
+  &__container {
+  }
+
+  &__title {
+    margin-bottom: rem(24);
+  }
+
+  &__text {
+  }
+
+  &__video-block {
+  }
+}
+
+.video-block {
+  position: relative;
+  overflow: hidden;
+  border-radius: rem(4);
+  height: 100%;
+  max-height: rem(500);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba($color: #1e212c, $alpha: 0.6);
+    visibility: visible;
+
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+
+  &.played {
+    &::before {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 2;
+
+    &:before {
+      font-size: rem(26);
+      color: $mainWhite;
+      line-height: math.div(16, 16);
+
+      cursor: pointer;
+
+      background-color: $mainRed;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      height: rem(80);
+      width: rem(80);
+      border-radius: 50%;
+
+      transition: background-color 0.3s ease 0s;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+
+      @include adaptiveValue('top', -210, -41, 1230, 320, 1);
+      @include adaptiveValue('bottom', -210, -41, 1230, 320, 1);
+      @include adaptiveValue('left', -575, -105, 1230, 320, 1);
+      @include adaptiveValue('right', -575, -105, 1230, 320, 1);
+
+      z-index: 1;
+    }
+
+    &:hover,
+    &:active {
+      &::before {
+        background-color: $mainActiveRed;
+      }
+    }
+
+    &.played {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  // &__muted {
+  //   position: absolute;
+  //   bottom: percent(32, 500);
+  //   left: percent(32, 1230);
+
+  //   z-index: 2;
+
+  //   &:before {
+  //     font-size: rem(20);
+  //     color: $mainWhite;
+  //     line-height: math.div(16, 16);
+
+  //     cursor: pointer;
+
+  //     background-color: rgba(255, 255, 255, 0.12);
+
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+
+  //     height: rem(40);
+  //     width: rem(40);
+  //     border-radius: 50%;
+  //     opacity: 1;
+  //     visibility: visible;
+
+  //     transition: color 0.3s ease 0s, background-color 0.3s ease 0s, opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+  //   }
+
+  //   &:hover,
+  //   &:active {
+  //     &::before {
+  //       color: $mainDarkGray;
+  //       background-color: rgba(255, 255, 255);
+  //     }
+  //   }
+
+  //   &.played {
+  //     opacity: 0;
+  //     visibility: hidden;
+  //   }
+  // }
+
+  &__content {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: rem(4);
+  }
+}
+
+.button-reset {
+}

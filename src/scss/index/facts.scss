@@ -1,0 +1,109 @@
+.facts {
+  background-color: $mainWhite;
+  overflow: hidden;
+
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: rem(-195);
+    left: rem(-9);
+    width: rem(570);
+    height: rem(1065);
+
+    background-image: url('@img/facts/bg-image.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__container {
+    @include adaptiveValue('padding-top', 60, 0);
+  }
+
+  &__title {
+    @include adaptiveValue('margin-bottom', 60, 30);
+  }
+
+  &__list {
+  }
+}
+
+.list-facts {
+  display: flex;
+  gap: rem(48);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include adaptiveValue('padding-bottom', 60, 0);
+
+  &__element {
+    flex: 0 0 rem(148);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(148);
+    height: rem(148);
+
+    font-weight: 700;
+    font-size: rem(32);
+    color: $mainDarkGray;
+
+    position: relative;
+
+    --v: calc(((18 / 5) * var(--p) - 90) * 1deg);
+
+    margin-bottom: rem(20);
+
+    &-first {
+      --p: 90;
+      --colorRange: #f89828;
+      --colorNone: rgba(248, 151, 40, 0.3);
+    }
+
+    &-second {
+      --p: 75;
+      --colorRange: #f52f6e;
+      --colorNone: rgba(245, 47, 110, 0.3);
+    }
+
+    &-third {
+      --p: 80;
+      --colorRange: #5a87fc;
+      --colorNone: rgba(90, 136, 252, 0.3);
+    }
+
+    &-fourth {
+      --p: 100;
+      --colorRange: #03cea4;
+      --colorNone: rgba(3, 206, 165, 0.3);
+    }
+
+    &::before {
+      content: '';
+
+      width: rem(148);
+      height: rem(148);
+      display: flex;
+      border-radius: 50%;
+      padding: 10px;
+      background: linear-gradient(var(--v), var(--colorNone) 50%, transparent 0) 0 / min(100%, (50 - var(--p)) * 100%),
+        linear-gradient(var(--v), transparent 50%, var(--colorRange) 0) 0 / min(100%, (var(--p) - 50) * 100%),
+        linear-gradient(to right, var(--colorNone) 50%, var(--colorRange) 0);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+
+      position: absolute;
+    }
+  }
+
+  &__text {
+    text-align: center;
+  }
+}

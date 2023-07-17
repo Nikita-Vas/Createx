@@ -1,0 +1,114 @@
+.content-news {
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    gap: rem(30);
+  }
+
+  &__img-wraper {
+    margin-top: rem(-79);
+    flex: 1 1 auto;
+
+    @media (max-width: rem(964)) {
+      margin-top: unset;
+    }
+  }
+
+  &__image-ibg {
+    padding-bottom: 40%;
+  }
+
+  &__desc {
+    margin: 0 auto;
+  }
+}
+
+.news-content-desc {
+  display: flex;
+  gap: rem(24);
+  flex-direction: column;
+
+  max-width: rem(810);
+
+  &__text-bold {
+    font-style: normal;
+    font-weight: 700;
+    font-size: rem(20);
+    line-height: math.div(30, 20);
+
+    color: $mainDarkGray;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: math.div(26, 16);
+    color: $mainGray;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: rem(24);
+      }
+    }
+  }
+
+  &__list {
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: math.div(26, 16);
+
+    color: $mainGray;
+
+    &::before {
+      color: $mainRed;
+    }
+  }
+
+  &__social {
+  }
+}
+
+.text-bold {
+  &_quote {
+    padding: rem(24) 0 rem(24) rem(58);
+    position: relative;
+
+    &::after {
+      content: '"';
+      position: absolute;
+      top: rem(10);
+      left: 0;
+
+      font-size: rem(60);
+      color: $mainRed;
+    }
+  }
+}
+
+.social-news {
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+
+  @include adaptiveValue('padding-top', 36, 0);
+
+  &__text {
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: math.div(26, 16);
+
+    color: $mainDarkGray;
+
+    &::before {
+      font-size: rem(24);
+    }
+  }
+}

@@ -1,0 +1,146 @@
+.works {
+  &__container {
+  }
+}
+
+.works-tabs {
+  &._tab-spoller {
+    @include adaptiveValue('padding-top', 60, 20);
+    @include adaptiveValue('padding-bottom', 60, 20);
+
+    .works-tabs__title {
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+  &__navigation {
+    width: 100%;
+    display: grid;
+
+    gap: rem(20);
+
+    position: relative;
+
+    top: rem(-50);
+    z-index: 1;
+
+    @media (min-width: rem(715)) {
+      grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: rem(154);
+    border-radius: rem(4);
+    gap: rem(16);
+    padding: rem(20);
+
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: math.div(26, 16);
+    color: #9a9ca5;
+
+    background-color: #ffffff;
+    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+      0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+
+    transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+
+    &::before {
+      font-size: rem(48);
+      color: $mainRed;
+
+      transition: color 0.3s ease 0s;
+    }
+
+    &::after {
+      content: '\e911';
+      @extend %ic;
+      display: none;
+      transform: rotate(180deg);
+
+      transition: transform 0.3s ease 0s;
+    }
+
+    @media (max-width: rem(715)) {
+      &::after {
+        display: block;
+      }
+    }
+
+    &._tab-active {
+      background-color: $mainRed;
+      color: $mainWhite;
+
+      &:before {
+        color: $mainWhite;
+      }
+
+      &::after {
+        transform: rotate(0deg);
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $mainRed;
+        color: $mainWhite;
+
+        &:before {
+          color: $mainWhite;
+        }
+      }
+    }
+  }
+}
+
+.works {
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 390px);
+    justify-content: center;
+    gap: rem(20);
+
+    @media (max-width: 835px) {
+      grid-template-columns: repeat(auto-fill, 290px);
+    }
+  }
+
+  &__item {
+    background-color: #ffffff;
+    align-self: stretch;
+  }
+}
+
+.works-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: rem(15);
+  padding: rem(20);
+
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: math.div(26, 16);
+  color: $mainGray;
+
+  @include adaptiveValue('margin-top', 40, 20);
+  @include adaptiveValue('margin-bottom', 80, 30);
+
+  &::before {
+    font-size: rem(24);
+    color: inherit;
+  }
+}
+
+.centered {
+  width: 100%;
+
+  @include flex-all-center;
+}

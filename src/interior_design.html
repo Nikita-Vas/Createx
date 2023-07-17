@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/_head.htm',{ "title":"Createx: Interior design" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header-fixed.htm',{})
+      <main class="page-interior-design">
+        <section class="page-interior-design_home">
+          @@include('html/interior-design/_home-section-inner.htm',{})
+        </section>
+
+        <section class="page-interior-design_we-offer">@@include('html/interior-design/_we-offer.htm',{})</section>
+
+        <section class="page-interior-design_we-do">@@include('html/interior-design/_how-we-do.htm',{})</section>
+
+        <section class="page-iterior-design_mission section-offset">
+          @@include('html/interior-design/_mission-dark.htm',{})
+        </section>
+
+        <section class="page-iterior-design_projects">
+          @@include('html/interior-design/_related-project.htm',{})
+        </section>
+
+        <section class="page-iterior-design_pricing">@@include('html/interior-design/_pricing.htm',{})</section>
+
+        <section class="page-interior-design_partners">
+          @@include('html/index/_partners.htm',{"title":"Supported by 12+ partners"})
+        </section>
+
+        <section class="page-interior-design_contacts">
+          @@include('html/index/_contacts-section.htm',{"title": "A quick way to discuss details"})
+        </section>
+      </main>
+
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{}) @@include('html/_js.htm',{})
+  </body>
+</html>

@@ -1,0 +1,155 @@
+.team {
+  overflow: hidden;
+
+  @include adaptiveValue('padding-bottom', 120, 40);
+
+  &__container {
+    position: relative;
+
+    &::before {
+      content: '';
+      background-image: url('@img/page_about/team/bg-image.png');
+      background-repeat: no-repeat;
+
+      background-position: left bottom;
+
+      width: rem(792);
+      height: rem(638);
+      display: inline-block;
+
+      position: absolute;
+      bottom: rem(-524);
+      left: rem(-333);
+    }
+  }
+
+  &__content {
+  }
+
+  &__title {
+    margin-bottom: rem(24);
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: rem(18);
+    line-height: math.div(27, 18);
+    color: #787a80;
+    text-align: center;
+
+    @include adaptiveValue('margin-bottom', 60, 30);
+  }
+
+  &__items {
+  }
+
+  &__descr {
+    font-weight: 400;
+    font-size: rem(18);
+    line-height: math.div(27, 18);
+    text-align: center;
+    color: $mainGray;
+
+    @include adaptiveValue('padding-top', 80, 30);
+  }
+
+  &__link {
+    text-decoration-line: underline;
+    color: $mainRed;
+  }
+}
+
+.items-team {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  gap: rem(30);
+
+  &__item {
+    @media (any-hover: hover) {
+      &:hover {
+        .items-team__social {
+          bottom: rem(0);
+        }
+      }
+    }
+  }
+
+  &__wraper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(12);
+
+    background-color: rgba($color: $mainRed, $alpha: 0.7);
+
+    padding: rem(20) 0;
+
+    position: absolute;
+    bottom: rem(-60);
+    left: 0;
+    right: 0;
+
+    transition: bottom 0.3s ease 0s;
+  }
+
+  &__link {
+    color: $mainWhite;
+    opacity: 0.8;
+
+    position: relative;
+
+    &::before {
+      font-size: rem(20);
+
+      transition: opacity 0.3s ease 0s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      left: -5px;
+    }
+  }
+
+  &__image-ibg {
+    padding-bottom: 119%;
+    border-radius: rem(4);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: rem(16) rem(10) rem(0) rem(10);
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: rem(20);
+    line-height: math.div(30, 20);
+    color: $mainGray;
+  }
+
+  &__position {
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: math.div(26, 16);
+    color: $mainLightGray;
+  }
+}

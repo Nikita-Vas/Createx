@@ -1,0 +1,105 @@
+.comments {
+  @include adaptiveValue('padding-top', 80, 40);
+  &__container {
+    max-width: rem(800);
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include adaptiveValue('margin-bottom', 60, 30);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    @include adaptiveValue('row-gap', 60, 30);
+  }
+
+  &__item {
+  }
+}
+
+.comment {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(30);
+
+  &__meta {
+    flex: 0 0 rem(150);
+
+    display: flex;
+    gap: rem(8);
+    flex-direction: column;
+  }
+
+  &__author {
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: math.div(27, 18);
+    color: $mainDarkGray;
+    user-select: none;
+  }
+
+  &__date {
+    font-weight: 400;
+    font-size: rem(14);
+    line-height: math.div(21, 14);
+    color: $mainLightGray;
+  }
+
+  &__content {
+    flex: 1 1 rem(290);
+  }
+
+  &__desc {
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: math.div(26, 16);
+
+    color: $mainGray;
+
+    &:not(:last-child) {
+      margin-bottom: rem(16);
+    }
+
+    * {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__content-replay {
+    display: flex;
+    gap: rem(8);
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: math.div(21, 14);
+    color: $mainLightGray;
+
+    transition: color 0.2s ease 0s;
+
+    &::before {
+      color: inherit;
+
+      transition: color 0.2s ease 0s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $mainRed;
+        &::before {
+          color: inherit;
+        }
+      }
+    }
+  }
+}
+
+.mention {
+  color: $mainRed;
+
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: math.div(26, 16);
+}

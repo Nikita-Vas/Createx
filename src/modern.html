@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/_head.htm',{ "title":"Createx: Modern Cottage" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header-fixed.htm',{})
+      <main class="page-modern">
+        <section class="page-modern_home">@@include('html/modern-page/_home-modern.htm',{})</section>
+
+        <section class="page-modern_goal section-offset">@@include('html/modern-page/_project-goal.htm',{})</section>
+
+        <section class="page-modern_decision section-offset">@@include('html/modern-page/_decision.htm',{})</section>
+
+        <section class="page-modern_projects">@@include('html/interior-design/_related-project.htm',{})</section>
+
+        <section class="page-modern_contacts">
+          @@include('html/index/_contacts-section.htm',{"title": "A quick way to discuss details"})
+        </section>
+      </main>
+
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{}) @@include('html/_js.htm',{})
+  </body>
+</html>

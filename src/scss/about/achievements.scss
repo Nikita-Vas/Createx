@@ -1,0 +1,44 @@
+.achievements {
+  &__container {
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    padding-bottom: rem(30);
+    justify-content: center;
+
+    @include adaptiveValue('gap', 60, 30);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: rem(20);
+  }
+
+  &__number {
+    font-weight: 700;
+    font-size: rem(46);
+    line-height: math.div(60, 46);
+
+    color: #ff5a30;
+    &::before {
+      font-size: rem(39);
+      color: $mainLightGray;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__text {
+    text-align: center;
+  }
+}

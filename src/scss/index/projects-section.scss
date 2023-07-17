@@ -1,0 +1,143 @@
+.projects {
+  background-color: $mainWhite;
+
+  &__container {
+    @include adaptiveValue('padding-bottom', 120, 30);
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: rem(48);
+  }
+
+  &__title {
+    max-width: rem(710);
+
+    padding-bottom: rem(12);
+  }
+
+  &__slider-nav {
+  }
+
+  &__slider {
+  }
+
+  &__wrapper {
+    padding: 0 rem(30);
+    margin: 0 rem(-30);
+
+    padding-bottom: rem(80);
+  }
+
+  &__item {
+  }
+
+  &__slide {
+  }
+}
+
+.projects-item {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: rem(440);
+  max-width: rem(390);
+
+  background-color: $mainWhite;
+  border-radius: 4px;
+  box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+
+  margin: 0 auto;
+
+  &--no-slider {
+    @media (max-width: rem(835)) {
+      min-height: rem(350);
+      height: 100%;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        @media (min-width: rem(835)) {
+          min-height: unset;
+          height: rem(440);
+        }
+
+        @media (max-width: rem(835)) {
+          height: rem(350);
+        }
+      }
+    }
+  }
+
+  @media (max-width: rem(835)) {
+    min-height: rem(350);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      @media (min-width: rem(835)) {
+        min-height: unset;
+        height: rem(440);
+      }
+
+      // @media (max-width: rem(835)) {
+      //   height: rem(350);
+      // }
+
+      .projects-item__image-ibg {
+        padding-bottom: 71%;
+      }
+
+      .projects-item__btn {
+        display: flex;
+
+        opacity: 1;
+      }
+    }
+  }
+
+  &__image-ibg {
+    padding-bottom: 88%;
+
+    transition: padding-bottom 0.3s ease 0s;
+  }
+
+  &__img {
+  }
+
+  &__content {
+    @include flex-column-center;
+    padding: rem(16) rem(15) rem(24) rem(15);
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: math.div(30, 20);
+    color: $mainDarkGray;
+    text-align: center;
+
+    margin-bottom: rem(4);
+  }
+
+  &__text {
+    line-height: math.div(21, 14);
+    color: $mainGray;
+  }
+
+  &__btn {
+    display: none;
+
+    opacity: 0;
+    margin-top: rem(24);
+
+    padding: 14px 31px;
+    font-size: rem(14);
+
+    transition: opacity 0.3s ease 1.6s, background-color 0.2s ease 0s, color 0.2s ease 0s;
+  }
+}

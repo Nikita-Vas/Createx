@@ -1,0 +1,170 @@
+.news-content {
+  &__container {
+  }
+
+  &__title {
+    margin-bottom: rem(40);
+  }
+
+  &__pag {
+    @include adaptiveValue('padding-top', 60, 40);
+    @include adaptiveValue('padding-bottom', 180, 40);
+  }
+
+  &__pag-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(20);
+  }
+
+  &__pag-item {
+  }
+
+  &__pag-link {
+    &::before {
+      font-size: rem(16);
+    }
+
+    &--active {
+      color: $mainRed;
+    }
+  }
+}
+
+.news-content-tabs {
+  &._tab-spoller {
+    @include adaptiveValue('padding-top', 60, 20);
+    @include adaptiveValue('padding-bottom', 60, 20);
+
+    .news-content-tabs__title {
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+  &__navigation {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+    gap: rem(20);
+
+    @include adaptiveValue('padding-bottom', 60, 30);
+
+    @media (min-width: rem(715)) {
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: rem(4);
+    gap: rem(16);
+    padding: rem(10);
+
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: math.div(26, 16);
+    color: #9a9ca5;
+
+    border: rem(1) solid transparent;
+
+    background-color: #ffffff;
+
+    transition: background-color 0.3s ease 0s, color 0.3s ease 0s, border-color 0.3s ease 0s, color 0.3s ease 0s;
+
+    &::after {
+      content: '\e911';
+      @extend %ic;
+      display: none;
+      transform: rotate(180deg);
+
+      transition: transform 0.3s ease 0s;
+    }
+
+    // @media (max-width: rem(715)) {
+    //   &::after {
+    //     display: block;
+    //   }
+    // }
+
+    &._tab-active {
+      color: $mainRed;
+      border-color: $mainRed;
+
+      &::after {
+        transform: rotate(0deg);
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $mainRed;
+        color: $mainWhite;
+
+        &:before {
+          color: $mainWhite;
+        }
+      }
+    }
+  }
+}
+
+.news-content {
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
+    justify-content: center;
+    gap: rem(20);
+
+    @media (max-width: rem(600)) {
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    }
+  }
+
+  &__item {
+    background-color: $mainWhite;
+    align-self: stretch;
+
+    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+      0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+    border-radius: rem(4);
+
+    @media (any-hover: hover) {
+      &:hover {
+        .news-item__title {
+          color: $mainRed;
+        }
+      }
+    }
+  }
+
+  &__image-ibg {
+    padding-bottom: 51%;
+  }
+}
+
+.news-content-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: rem(15);
+  padding: rem(20);
+
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: math.div(26, 16);
+  color: $mainGray;
+
+  @include adaptiveValue('margin-top', 40, 20);
+  @include adaptiveValue('margin-bottom', 80, 30);
+
+  &::before {
+    font-size: rem(24);
+    color: inherit;
+  }
+}

@@ -1,0 +1,674 @@
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
+
+.section-offset {
+  @include adaptiveValue('padding-top', 120, 40);
+}
+//========================================================================================================================================================
+
+.main-title {
+  font-weight: 700;
+  font-size: rem(72);
+  line-height: math.div(94, 72);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: $mainDarkGray;
+
+  @media (max-width: rem(650)) {
+    @include adaptiveValue('font-size', 72, 30, 650, 320, 1);
+  }
+
+  &--small {
+    line-height: math.div(77, 64);
+    text-transform: none;
+
+    @include adaptiveValue('font-size', 64, 35, 650, 320, 1);
+  }
+
+  &--white {
+    color: $mainWhite;
+
+    span {
+      color: $mainRed;
+    }
+  }
+}
+
+.title {
+  font-weight: 700;
+  line-height: math.div(60, 46);
+  color: $mainDarkGray;
+  text-align: center;
+
+  @include adaptiveValue('font-size', 46, 30);
+
+  &-left {
+    text-align: left;
+  }
+}
+
+.popup-title {
+  font-size: rem(28);
+  line-height: 150%;
+  color: $mainDarkGray;
+  text-align: center;
+}
+
+.text {
+  font-size: rem(20);
+  line-height: math.div(30, 20);
+  color: #787a80;
+
+  @include adaptiveValue('margin-bottom', 60, 30);
+
+  &--white {
+    color: $mainWhite;
+  }
+
+  &-main {
+    font-size: rem(18);
+    line-height: math.div(27, 18);
+    &--center {
+      text-align: center;
+    }
+  }
+}
+//========================================================================================================================================================
+
+.button {
+  padding: rem(20) rem(40);
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.5px;
+  color: $mainWhite;
+  text-transform: uppercase;
+  border-radius: rem(4);
+
+  display: inline-block;
+  user-select: none;
+
+  transition: transform 0.3s ease;
+  transform: scale(1);
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &--stroke {
+    border: 1px solid $mainWhite;
+    padding: rem(19) rem(39);
+
+    &-primary {
+      border-color: $mainRed;
+      color: $mainRed;
+      transition: background-color 0.2s ease 0s, color 0.2s ease 0s;
+
+      &:active {
+        background-color: $mainRed;
+        color: $mainWhite;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: $mainRed;
+          color: $mainWhite;
+        }
+      }
+    }
+
+    &-white {
+      transition: background-color 0.2s ease 0s, color 0.2s ease 0s;
+
+      &:active {
+        background-color: $mainWhite;
+        color: $mainDarkGray;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: $mainWhite;
+          color: $mainDarkGray;
+        }
+      }
+    }
+  }
+
+  &--fill {
+    &-primary {
+      background-color: $mainRed;
+      transition: background-color 0.2s ease 0s;
+
+      &:active {
+        background-color: $mainActiveRed;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: $mainActiveRed;
+        }
+      }
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.know-form {
+  position: relative;
+  top: rem(92);
+
+  background-color: $mainWhite;
+  box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+  border-radius: 4px;
+
+  padding: rem(48) rem(60);
+
+  @include adaptiveValue('padding-left', 60, 0);
+  @include adaptiveValue('padding-right', 60, 0);
+
+  @media (max-width: rem(660)) {
+    top: rem(0);
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: rem(28);
+    line-height: math.div(42, 28);
+    color: $mainDarkGray;
+    text-align: center;
+
+    margin-bottom: rem(33);
+
+    @include adaptiveValue('font-size', 28, 20);
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    gap: rem(24);
+
+    &_vertical {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .form-field {
+        width: 100%;
+      }
+
+      .form-field__big {
+        flex-basis: unset;
+        width: 100%;
+      }
+
+      .form-field__input {
+        width: 100%;
+      }
+      .form-field__input--big {
+        flex: unset;
+        width: 100%;
+        height: rem(66);
+        position: relative;
+        resize: none;
+        padding-top: rem(11);
+
+        &::placeholder {
+          position: absolute;
+          top: 11px;
+          left: 16px;
+        }
+      }
+    }
+  }
+
+  &__block {
+    display: flex;
+
+    gap: rem(30);
+    width: 100%;
+
+    @media (max-width: rem(640)) {
+      flex-wrap: wrap;
+    }
+
+    .known-form__field {
+      flex: 1 1 50%;
+      min-width: rem(290);
+    }
+    .known-form__btn {
+      margin-bottom: rem(24);
+    }
+  }
+
+  &__btn {
+    padding: rem(14) rem(29);
+
+    @media (max-width: rem(694)) {
+      margin: 0 auto;
+    }
+  }
+}
+
+.form-field {
+  @include flex-column-start;
+  position: relative;
+
+  @media (max-width: rem(694)) {
+    width: 100%;
+  }
+
+  &--footer {
+    flex: 1 1 auto;
+  }
+
+  &__caption {
+    font-size: rem(14);
+    line-height: math.div(21, 14);
+    color: $mainGray;
+
+    margin-bottom: rem(7);
+  }
+
+  &__input {
+    background-color: $mainAthens;
+    border: 1px solid #d7dadd;
+    width: rem(260);
+    flex-shrink: 1;
+
+    height: rem(44);
+    border-radius: rem(4);
+
+    padding-left: rem(15);
+
+    position: relative;
+
+    @media (max-width: rem(694)) {
+      width: 100%;
+    }
+
+    &::placeholder {
+      font-family: 'Ubuntu';
+      font-style: normal;
+      font-weight: 400;
+      font-size: rem(14);
+      line-height: math.div(21, 14);
+      color: $mainGray;
+    }
+  }
+
+  &__input--footer {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: rem(4) 0 0 rem(4);
+    border-right: none;
+    width: 100%;
+
+    color: $mainWhite;
+
+    &::placeholder {
+      color: rgb(255, 255, 255, 0.6);
+    }
+  }
+
+  &__big {
+    flex: 1 1 rem(290);
+
+    @media (max-width: rem(968)) {
+      height: rem(104);
+
+      .form-field__input--big {
+        height: 100%;
+      }
+    }
+
+    .form-field__input {
+      width: 100%;
+
+      resize: none;
+      position: relative;
+      padding: rem(10) rem(15);
+
+      &::placeholder {
+        position: absolute;
+        top: rem(10);
+        left: rem(15);
+      }
+    }
+  }
+}
+
+.form__error {
+  font-size: rem(14);
+  color: red;
+
+  position: absolute;
+
+  bottom: rem(-18);
+}
+
+//========================================================================================================================================================
+
+.slider-nav {
+  @include flex-v-center;
+
+  &__btn {
+    @include flex-all-center;
+
+    width: rem(48);
+    height: rem(48);
+    border-radius: 50%;
+    background-color: transparent;
+    color: $mainDarkGray;
+    transition: background-color 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $mainRed;
+        color: $mainWhite;
+      }
+    }
+
+    &:active {
+      background-color: $mainRed;
+      color: $mainWhite;
+    }
+  }
+
+  &__btn-prev {
+    &::before {
+      transform: rotate(-180deg);
+      color: inherit;
+    }
+  }
+
+  &__btn-next {
+    &::before {
+      color: inherit;
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.lern {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(40);
+  flex-wrap: wrap;
+
+  &__title {
+    font-weight: 700;
+    font-size: rem(28);
+    line-height: math.div(42, 28);
+
+    color: $mainDarkGray;
+  }
+}
+
+//========================================================================================================================================================
+
+.custom-checkbox {
+  &__input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__text {
+    display: inline-block;
+    padding-left: rem(27);
+
+    font-size: rem(14);
+    line-height: math.div(21, 14);
+    color: $mainLightGray;
+    user-select: none;
+
+    position: relative;
+
+    &::before {
+      content: '';
+      display: inline-block;
+
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      width: rem(16);
+      height: rem(16);
+      background-color: $mainWhite;
+
+      border: rem(1) solid $mainRed;
+      border-radius: rem(3);
+
+      transition: background-color 0.3s ease 0s;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: rem(3);
+      top: rem(4);
+      width: rem(10);
+      height: rem(8);
+      opacity: 0;
+
+      background-image: url('@img/contacts-section/check.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      transition: opacity 0.3s ease 0s;
+    }
+  }
+
+  &__input:checked + &__text {
+    color: #000;
+  }
+
+  &__input:checked + &__text:after {
+    opacity: 1;
+  }
+  &__input:checked + &__text:before {
+    background-color: $mainRed;
+  }
+
+  &__input:focus + &__text {
+    outline: rem(2) solid #000;
+  }
+}
+
+.custom-radio {
+  display: inline-flex;
+  gap: rem(12);
+  align-items: center;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__text {
+  }
+
+  &__text {
+    display: inline-block;
+    padding-left: rem(27);
+    font-size: rem(16);
+    line-height: 160%;
+
+    color: $mainLightGray;
+    user-select: none;
+
+    position: relative;
+
+    &::before {
+      content: '';
+      display: inline-block;
+
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: rem(16);
+      height: rem(16);
+      background-color: $mainWhite;
+
+      border: rem(1) solid $mainLightGray;
+      border-radius: 50%;
+
+      transition: background-color 0.3s ease 0s;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: rem(4);
+      top: 50%;
+      transform: translateY(-50%);
+      width: rem(8);
+      height: rem(8);
+      border-radius: 50%;
+      opacity: 0;
+
+      background-color: $mainRed;
+
+      transition: opacity 0.3s ease 0s;
+    }
+  }
+
+  &__input:checked + &__text {
+    color: #000;
+  }
+
+  &__input:checked + &__text:after {
+    opacity: 1;
+  }
+
+  &__input:checked + &__text:before {
+    border-color: $mainRed;
+  }
+
+  &__input:focus + &__text {
+    outline: rem(2) solid #000;
+  }
+}
+
+.custom-file {
+  &__input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__text {
+    display: inline-block;
+    padding-left: rem(27);
+
+    font-size: rem(14);
+    line-height: math.div(21, 14);
+    color: $mainLightGray;
+    user-select: none;
+
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: rem(3);
+      top: rem(4);
+      width: rem(15);
+      height: rem(15);
+      opacity: 1;
+
+      background-image: url('@img/popup/Attach.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      transition: opacity 0.3s ease 0s;
+    }
+  }
+
+  &__input:focus + &__text {
+    outline: rem(2) solid #000;
+  }
+}
+
+//========================================================================================================================================================
+
+.breadcrumbs {
+  @include flex-v-center;
+  flex-wrap: wrap;
+
+  &__item {
+    &:not(:last-child) {
+      &::after {
+        content: '/';
+        display: inline-flex;
+        padding: 0 rem(8);
+        color: $mainLightGray;
+      }
+    }
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: rem(14);
+    line-height: math.div(21, 14);
+
+    &:not([href]) {
+      color: $mainLightGray;
+    }
+  }
+
+  &__link-active {
+    color: $mainLightGray;
+  }
+}
+
+//========================================================================================================================================================
+.button-up {
+  display: flex;
+  align-items: flex-end;
+  gap: rem(16);
+
+  position: fixed;
+  right: rem(15);
+  bottom: rem(15);
+  z-index: 3;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+
+  &-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (min-width: rem(1250)) {
+    right: calc((100% - 1230px) / 2);
+  }
+
+  .button--fill-primary {
+    padding: rem(8);
+    &::before {
+      font-size: rem(24);
+    }
+  }
+
+  &__text {
+    font-size: rem(14);
+    text-transform: uppercase;
+    line-height: 150%;
+    color: $mainWhite;
+  }
+}

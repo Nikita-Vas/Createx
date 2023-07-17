@@ -1,0 +1,155 @@
+<div class="contacts-form section-offset">
+  <div class="contacts-form__container">
+    <h2 class="contacts-form__title title">Contact us</h2>
+    <div class="contacts-form__text text">
+      Please complete the form. Detailed information will help&nbsp;us to&nbsp;make a&nbsp;tuned offer.
+    </div>
+    <div class="contacts-form__content form-content">
+      <div class="form-content__wraper-img">
+        <div class="form-content__image-ibg">
+          <img src="@img/page_contacts/contacts-form/image.jpg" alt="Person" />
+        </div>
+      </div>
+
+      <form class="form-content__form form-request">
+        <div class="form-request__block">
+          <label class="form-request__label">
+            <div class="form-request__caption">Name*</div>
+            <input
+              autocomplete="off"
+              type="text"
+              name="form[]"
+              inputmode="text"
+              data-error="Ошибка"
+              placeholder="Your name"
+              class="form-request__input"
+            />
+          </label>
+
+          <div class="form-request__select">
+            <div class="form-request__caption">I am interested in</div>
+            <select name="interested" data-class-modif="form">
+              <option value="Interior_Design" selected>Interior Design</option>
+              <option value="Construction">Construction</option>
+              <option value="Project_Development">Project Development</option>
+              <option value="Repairs">Repairs</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-request__block">
+          <label class="form-request__label">
+            <div class="form-request__caption">Phone*</div>
+            <input
+              autocomplete="off"
+              type="tel"
+              name="form[]"
+              inputmode="tel"
+              data-error="Ошибка"
+              placeholder="Your phone number"
+              class="form-request__input form-request__input--phone"
+            />
+          </label>
+
+          <div class="form-request__select">
+            <div class="form-request__caption">Location</div>
+            <select name="location" data-class-modif="form">
+              <option value="New_York" selected>New York</option>
+              <option value="San_Francisco">San Francisco</option>
+              <option value="New_Jersey">New Jersey</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-request__block">
+          <label class="form-request__label">
+            <div class="form-request__caption">Email*</div>
+            <input
+              autocomplete="off"
+              type="email"
+              name="email"
+              data-required="email"
+              data-error="Неверный email адрес"
+              data-dev
+              data-validate
+              placeholder="Your working email"
+              class="form-request__input"
+            />
+          </label>
+
+          <div class="form-request__select">
+            <div class="form-request__caption">Preferred contact method</div>
+            <fieldset class="form-request__radio">
+              <label class="custom-radio">
+                <input
+                  autocomplete="off"
+                  type="radio"
+                  name="contact_method"
+                  data-error="Ошибка"
+                  class="custom-radio__input"
+                  value="Phone"
+                />
+                <span class="custom-radio__text"> Phone </span>
+              </label>
+
+              <label class="custom-radio">
+                <input
+                  autocomplete="off"
+                  type="radio"
+                  name="contact_method"
+                  data-error="Ошибка"
+                  class="custom-radio__input"
+                  value="Email"
+                />
+                <span class="custom-radio__text"> Email </span>
+              </label>
+
+              <label class="custom-radio">
+                <input
+                  autocomplete="off"
+                  type="radio"
+                  name="contact_method"
+                  data-error="Ошибка"
+                  class="custom-radio__input"
+                  value="Viber"
+                />
+                <span class="custom-radio__text"> Viber </span>
+              </label>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="form-request__block">
+          <label class="form-request__label">
+            <div class="form-request__caption">Message*</div>
+
+            <textarea
+              autocomplete="off"
+              name="message"
+              data-error="Ошибка"
+              placeholder="Your message"
+              class="form-request__input form-request__input-big"
+            ></textarea>
+          </label>
+        </div>
+
+        <div class="form-request__block">
+          <label class="custom-checkbox">
+            <input
+              autocomplete="off"
+              type="checkbox"
+              name="form[]"
+              data-error="Ошибка"
+              placeholder=""
+              class="custom-checkbox__input"
+            />
+            <span class="custom-checkbox__text">
+              I&nbsp;agree to&nbsp;receive communications from Createx Construction Bureau.
+            </span>
+          </label>
+          <button type="submit" class="button form-request__btn button--fill-primary">send request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,113 @@
+%ic {
+  font-family: 'icons';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[class*='_icon-'] {
+  &:before {
+    @extend %ic;
+    display: block;
+  }
+}
+
+._icon-share-arrow:before {
+  content: '\e91f';
+}
+._icon-iPhone:before {
+  content: '\e900';
+}
+._icon-Chat:before {
+  content: '\e901';
+}
+._icon-arrow:before {
+  content: '\e902';
+}
+._icon-play-btn:before {
+  content: '\e903';
+}
+._icon-sound-off:before {
+  content: '\e904';
+}
+._icon-ic-like:before {
+  content: '\e905';
+}
+._icon-ic-hand:before {
+  content: '\e906';
+}
+._icon-ic-slippers:before {
+  content: '\e907';
+}
+._icon-wall:before {
+  content: '\e908';
+}
+._icon-ic-plan:before {
+  content: '\e909';
+}
+._icon-ic-pantone:before {
+  content: '\e90a';
+}
+._icon-tassel:before {
+  content: '\e90b';
+}
+._icon-Whatsapp:before {
+  content: '\e90c';
+}
+._icon-messenger:before {
+  content: '\e90d';
+}
+._icon-facebook:before {
+  content: '\e90e';
+}
+._icon-twitter:before {
+  content: '\e90f';
+}
+._icon-YouTube:before {
+  content: '\e910';
+}
+._icon-arrow-top:before {
+  content: '\e911';
+}
+._icon-ic-house:before {
+  content: '\e912';
+}
+._icon-Convert:before {
+  content: '\e913';
+}
+._icon-check:before {
+  content: '\e914';
+}
+._icon-ic-brain:before {
+  content: '\e915';
+}
+._icon-ic-success:before {
+  content: '\e916';
+}
+._icon-ic-budget:before {
+  content: '\e917';
+}
+._icon-Attach:before {
+  content: '\e918';
+}
+._icon-Linked-In:before {
+  content: '\e919';
+}
+._icon-ic-contract:before {
+  content: '\e91a';
+}
+._icon-ic-helmet:before {
+  content: '\e91b';
+}
+._icon-ic-camera:before {
+  content: '\e91c';
+}
+._icon-location:before {
+  content: '\e91d';
+}
+._icon-clock:before {
+  content: '\e91e';
+}

@@ -1,0 +1,161 @@
+.pricing {
+  background-color: #f4f5f7;
+
+  @include adaptiveValue('padding-top', 80, 30);
+
+  overflow: hidden;
+
+  &__container {
+  }
+
+  &__title {
+  }
+
+  &__text {
+    @include adaptiveValue('margin-bottom', 60, 20);
+  }
+
+  &__table {
+  }
+}
+
+.table-wrapper {
+  background-color: $mainWhite;
+
+  border: 1px solid #e5e8ed;
+
+  box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+  border-radius: rem(4);
+
+  position: relative;
+  z-index: 2;
+  transform-style: preserve-3d;
+
+  @media (max-width: rem(850)) {
+    overflow-x: auto;
+  }
+
+  &::before {
+    content: '';
+
+    background-image: url('@img/page_interior-design/pricing/image_bg.png');
+    background-repeat: no-repeat;
+
+    position: absolute;
+    display: block;
+
+    width: rem(1066);
+    height: rem(859);
+    top: rem(-220);
+    left: rem(-300);
+
+    z-index: 0;
+    transform: translateZ(-1px);
+  }
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: rem(818);
+
+  &__header {
+  }
+
+  &__row {
+    min-height: rem(58);
+  }
+
+  &__th {
+    padding: rem(31) 0 rem(24);
+
+    &:first-child {
+      font-weight: 700;
+      font-size: rem(18);
+      line-height: math.div(27, 18);
+      color: $mainDarkGray;
+
+      text-align: left;
+      vertical-align: bottom;
+
+      padding-left: rem(24);
+    }
+  }
+
+  &__heading {
+    font-weight: 700;
+    font-size: rem(24);
+    line-height: math.div(36, 24);
+    text-align: center;
+    text-transform: uppercase;
+    color: $mainDarkGray;
+
+    margin-bottom: rem(2);
+  }
+
+  &__per {
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: math.div(27, 18);
+
+    text-align: center;
+
+    color: $mainLightGray;
+  }
+
+  &__body {
+    .table__row {
+      &:nth-child(odd) {
+        background-color: #f4f5f7;
+      }
+
+      &:nth-child(even) {
+        background-color: $mainWhite;
+      }
+
+      &:last-child {
+        .table__col {
+          padding: rem(30) 0;
+        }
+      }
+    }
+  }
+
+  &__col {
+    text-align: center;
+    vertical-align: middle;
+
+    font-size: rem(16);
+    line-height: math.div(26, 16);
+
+    color: #424551;
+
+    padding: rem(16) rem(24);
+
+    &:first-child {
+      text-align: left;
+    }
+  }
+
+  &__check {
+    font-size: rem(0);
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(24);
+    height: rem(24);
+
+    background-image: url('@img/page_interior-design/icons/Mark.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__text {
+  }
+
+  &__btn {
+    padding: rem(12) rem(24);
+    font-size: rem(12);
+  }
+}

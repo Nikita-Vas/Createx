@@ -1,0 +1,131 @@
+.services-content {
+  background-color: $mainWhite;
+  @include adaptiveValue('padding-bottom', 180, 30);
+  overflow: hidden;
+
+  &__container {
+  }
+
+  &__items {
+    position: relative;
+    z-index: 2;
+    transform-style: preserve-3d;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+
+      background-image: url('@img/page_service/services-content/bg-image_01.png');
+
+      background-repeat: no-repeat;
+
+      // background-size: 792px 698px;
+      width: rem(792);
+      height: rem(698);
+
+      top: percent(411, 2040);
+      right: rem(-658);
+      z-index: 1;
+      transform: translateZ(-1px);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+
+      background-image: url('@img/page_service/services-content/bg-image_02.png');
+      background-position: left bottom;
+      background-repeat: no-repeat;
+
+      width: rem(792);
+      height: rem(638);
+
+      bottom: percent(-403, 2040);
+      left: rem(-350);
+      z-index: 1;
+      transform: translateZ(-1px);
+    }
+  }
+
+  &__item {
+  }
+}
+
+.services-item {
+  @include adaptiveValue('gap', 80, 30);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  align-items: center;
+
+  &--reverse {
+    .services-item__image-ibg {
+      order: 1;
+
+      @media (max-width: rem(657)) {
+        order: unset;
+      }
+    }
+
+    .services-item__content {
+      order: 0;
+
+      @media (max-width: rem(657)) {
+        order: unset;
+      }
+    }
+  }
+
+  &__image-ibg {
+    padding-bottom: 73%;
+  }
+
+  &__content {
+    max-height: rem(420);
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: rem(32);
+    line-height: math.div(48, 32);
+
+    color: $mainDarkGray;
+
+    margin-bottom: rem(24);
+  }
+
+  &__text {
+    font-size: rem(16);
+    line-height: math.div(26, 16);
+    color: $mainLightGray;
+
+    @include adaptiveValue('margin-bottom', 48, 24);
+  }
+
+  &__btn {
+    font-size: rem(14);
+    padding: rem(16) rem(32);
+    letter-spacing: none;
+  }
+}
+
+// display: flex;
+// flex-wrap: wrap;
+// justify-content: center;
+// align-items: center;
+
+// @include adaptiveValue('gap', 80, 30);
+
+// &__image-ibg {
+//   align-self: stretch;
+
+//   flex: 1 1 calc(50% - rem(40));
+//   min-width: rem(290);
+// }
+
+// &__content {
+//   flex: 0 0 calc(50% - rem(40));
+//   padding: rem(76) 0;
+// }

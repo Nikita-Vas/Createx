@@ -1,0 +1,72 @@
+<div class="contacts-section">
+  <div class="contacts-section__container">
+    <form class="contacts-section__form form-contacts">
+      <h3 class="form-contacts__title lern__title">@@title</h3>
+      <div class="know-form__content know-form__content_vertical">
+        <label class="know-form__field form-field form-field_vertical">
+          <span class="form-field__caption">Name*</span>
+          <input
+            autocomplete="off"
+            type="text"
+            name="name"
+            data-error="Ошибка"
+            placeholder="Your name"
+            class="form-field__input"
+          />
+        </label>
+
+        <label class="know-form__field form-field">
+          <span class="form-field__caption">Phone*</span>
+          <input
+            autocomplete="off"
+            type="tel"
+            name="phone"
+            data-error="Ошибка"
+            placeholder="Your phone"
+            class="form-field__input form-field__input--phone"
+          />
+        </label>
+
+        <label class="know-form__field form-field">
+          <span class="form-field__caption">Email</span>
+          <input
+            autocomplete="off"
+            type="email"
+            name="email"
+            data-required="email"
+            data-error="Неверный email адрес"
+            data-dev
+            data-validate
+            placeholder="Your working email"
+            class="form-field__input form-field__input--email"
+          />
+        </label>
+
+        <label class="know-form__field form-field form-field__big">
+          <span class="form-field__caption">Message*</span>
+          <textarea
+            autocomplete="off"
+            name="message"
+            data-error="Ошибка"
+            placeholder="Your message"
+            class="form-field__input form-field__input--big"
+          ></textarea>
+        </label>
+        <label class="custom-checkbox">
+          <input
+            autocomplete="off"
+            type="checkbox"
+            name="form[]"
+            data-error="Ошибка"
+            placeholder=""
+            class="custom-checkbox__input"
+          />
+          <span class="custom-checkbox__text">
+            I&nbsp;agree to&nbsp;receive communications from Createx Construction Bureau.
+          </span>
+        </label>
+        <button type="submit" class="button know-form__btn button--fill-primary">send request</button>
+      </div>
+    </form>
+  </div>
+</div>

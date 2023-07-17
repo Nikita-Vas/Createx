@@ -1,0 +1,146 @@
+.centers {
+  @include adaptiveValue('padding-bottom', 180, 40);
+
+  &__container {
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: rem(30);
+
+    @media (max-width: rem(1030)) {
+      justify-content: center;
+    }
+  }
+
+  &__content-col {
+    flex: 1 1 rem(580);
+    max-width: rem(705);
+  }
+
+  &__content-search {
+    flex: 0 1 rem(390);
+  }
+}
+
+.col-centers {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: rem(30);
+
+    user-select: none;
+
+    background: $mainWhite;
+
+    border: rem(1) solid #e5e8ed;
+    border-radius: rem(4);
+    box-shadow: 0;
+
+    transition: box-shadow 0.3s ease 0s;
+
+    @include adaptiveValue('padding-top', 32, 15);
+    @include adaptiveValue('padding-bottom', 32, 15);
+    @include adaptiveValue('padding-right', 40, 20);
+    @include adaptiveValue('padding-left', 40, 20);
+
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+          0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(24);
+    }
+  }
+
+  &__content {
+    flex: 1 1 rem(290);
+  }
+
+  &__location {
+    display: flex;
+    gap: rem(24);
+
+    margin-bottom: rem(8);
+
+    &-city,
+    &-schedule {
+      display: flex;
+      gap: rem(8);
+
+      color: $mainLightGray;
+      font-size: rem(14);
+    }
+
+    &-schedule {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: rem(-12);
+
+        display: block;
+        background-color: $mainLightGray;
+
+        width: rem(1);
+        height: 100%;
+      }
+    }
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: math.div(30, 20);
+    color: $mainDarkGray;
+  }
+
+  &__btn {
+    flex: 0 0 rem(152);
+    font-size: rem(14);
+    padding: rem(9) rem(32);
+  }
+}
+
+.search-centers {
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+
+  &__title {
+    font-weight: 700;
+    font-size: rem(28);
+    line-height: math.div(42, 28);
+    color: $mainDarkGray;
+  }
+
+  &__text {
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: rem(30);
+
+    margin-top: rem(24);
+
+    @media (max-width: rem(420)) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__btn {
+    flex: 1 1 50%;
+    padding: rem(18) 0;
+  }
+}

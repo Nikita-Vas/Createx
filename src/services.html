@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/_head.htm',{ "title":"Createx: Services" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header-fixed.htm',{})
+      <main class="page-services">
+        <section class="page-services_home">@@include('html/services-page/_home-section.htm',{})</section>
+
+        <section class="page-services_content">@@include('html/services-page/_services-content.htm',{})</section>
+
+        <section class="page-services_contacts">
+          @@include('html/index/_contacts-section.htm',{"title": "A quick way to discuss details"})
+        </section>
+      </main>
+
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{}) @@include('html/_js.htm',{})
+  </body>
+</html>

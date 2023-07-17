@@ -1,0 +1,270 @@
+//====================================================================================================
+.footer {
+  background-color: $mainDarkGray;
+  color: rgba(255, 255, 255, 0.6);
+
+  @include adaptiveValue('padding-top', 80, 30);
+  @include adaptiveValue('padding-bottom', 80, 30);
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    // grid-template-rows: repeat(3, 1fr);
+    row-gap: rem(30);
+
+    @media (min-width: rem(600)) {
+      column-gap: rem(30);
+    }
+  }
+
+  &__left {
+    grid-column: 7 span;
+    grid-row: auto;
+
+    @media (max-width: rem(700)) {
+      grid-column: 12 span;
+    }
+  }
+
+  &__left-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @include adaptiveValue('gap', 60, 20);
+
+    &:not(:last-child) {
+      margin-bottom: rem(24);
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    height: rem(24);
+    margin-right: 0;
+  }
+
+  &__text {
+    line-height: math.div(21, 14);
+
+    max-width: rem(495);
+  }
+
+  &__form {
+    grid-column: 5 span;
+
+    @media (max-width: rem(950)) {
+      grid-row: 2;
+      grid-column: 7 span;
+    }
+
+    @media (max-width: rem(700)) {
+      grid-column: 12 span;
+      grid-row: auto;
+    }
+  }
+
+  &__contact-info {
+    grid-column: 4 span;
+
+    @media (max-width: rem(950)) {
+      grid-row: 3;
+    }
+
+    @media (max-width: rem(700)) {
+      grid-column: 12 span;
+      grid-row: auto;
+    }
+  }
+
+  &__about {
+    grid-column: 5 / 7;
+
+    @media (max-width: rem(950)) {
+      grid-row: 3;
+      grid-column: 5 / 8;
+    }
+
+    @media (max-width: rem(700)) {
+      grid-row: auto;
+      grid-column: 12 span;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: math.div(24, 16);
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: $mainWhite;
+
+    &:not(:last-child) {
+      margin-bottom: rem(13);
+    }
+  }
+
+  &__experiens {
+    grid-column: 8 / 13;
+
+    @media (max-width: rem(950)) {
+      grid-row: 3;
+    }
+
+    @media (max-width: rem(700)) {
+      grid-row: auto;
+      grid-column: 12 span;
+    }
+  }
+
+  &__copyright {
+    grid-column: 12 span;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: rem(15);
+
+    font-size: rem(12);
+    line-height: math.div(18, 12);
+
+    padding-top: rem(30);
+    user-select: none;
+
+    @media (max-width: rem(700)) {
+      grid-row: auto;
+      padding-top: unset;
+    }
+
+    @media (max-width: rem(457)) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+.logo {
+}
+
+.social {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: rem(16);
+  font-size: rem(20);
+
+  &__item {
+  }
+
+  &__link {
+    color: rgba(255, 255, 255, 0.6);
+
+    transition: color 0.2s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $mainWhite;
+      }
+    }
+  }
+}
+
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+
+  &__title {
+    font-weight: 700;
+    font-size: rem(24);
+    line-height: math.div(36, 24);
+
+    color: $mainWhite;
+
+    margin-bottom: rem(8);
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    padding: rem(15);
+    border-radius: 0 rem(4) rem(4) 0;
+    font-size: rem(14);
+
+    letter-spacing: normal;
+  }
+
+  &__text {
+    margin-top: rem(10);
+  }
+}
+
+.contact-info {
+  &__title {
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+    font-size: rem(16);
+    line-height: math.div(26, 16);
+    transition: color 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $mainWhite;
+      }
+    }
+
+    span {
+      color: $mainWhite;
+    }
+  }
+}
+
+.footer-about {
+  &__title {
+  }
+
+  &__list {
+  }
+}
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: rem(4);
+
+  &__item {
+  }
+
+  &__link {
+    font-size: rem(16);
+    line-height: math.div(26, 16);
+
+    color: rgba(255, 255, 255, 0.6);
+
+    transition: color 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $mainWhite;
+      }
+    }
+  }
+}
+.footer-experiens {
+  &__title {
+  }
+
+  &__list {
+  }
+}
+
+//====================================================================================================
